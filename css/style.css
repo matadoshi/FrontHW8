@@ -10,8 +10,10 @@
     src: url(../font/Jost.zip);
 } */
 body{
-    background: #275c53 ;
+    background: #275c53;
+    background-image: url(../photo/pattern_med_03_med_08.png);
 }
+
 .flexable{
     display: flex;
     justify-content: space-between;
@@ -28,31 +30,52 @@ header .left{
     width: 30%;
 }
 header .main{
-    width: 60%;
-}
-header .right{
-    width:1 0%;
+    width: 50%;
+    margin-left: 60px;
 }
 header .main ul{
     list-style: none;
+    position: relative;
 }
 header .main ul li{
-    margin-right: 10px;
+    margin-right: 50px;
+    position: relative;
+}
+header .main ul li i{
+    font-size: 10px;
+    color: #e2bb53;
+}
+header .main ul .underline::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2;
+    background-color: #e2bb53;
+    top: 18px;
+    left: 0;
+    opacity:0;
+    transition: 0.5s;
 }
 header .main ul a{
-    margin-right: 20px;
     text-transform: uppercase;
     transition: 0.5s;
+    font-size: 12px;
+    margin-right: 5px;
+}
+header .main ul li:hover ::after{
+    width: 70%;
+    height: 2px;
+    opacity: 1;
 }
 header .main ul a:hover{
     color: #e2bb53 !important;
 }
 header .right a{
-    margin-right: 10px;
+    margin-right: 20px;
     font-size: 20px;
 }
-header .right a:hover{
-    color: #e2bb53 !important;
+header .right a:hover i{
+    color: #e2bb53 ;
 }
 .slide .all{
     padding: 4rem 0;
@@ -114,10 +137,14 @@ header .right a:hover{
     border: 1px solid #e2bb53;
     transition: 0.5s;
 }
-.slide .left button:hover{
-    cursor: pointer;
+.slide .left button::after{
+    content: '';
+    position: absolute;
+    height: 10%;
+    width: 20%;
     background-color: #fff;
-    border: 1px solid #fff;
+    bottom: 0px;
+    left: 0;
 }
 .slide .left button span{
     font-size: 14px;
@@ -130,6 +157,15 @@ header .right a:hover{
 }
 .slide .right img{
     width: 100%;
+    animation: welcome 1s linear ;
+}
+@keyframes welcome {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
 }
 .product .all .box{
     width: 22%;
@@ -320,18 +356,19 @@ header .right a:hover{
 }
 .online .products .box{
     width: 22%;
-    overflow: hidden;
     border-radius: 15px;
     position: relative;
+    overflow: hidden;
 }
-.online .products .box img{
-    width: 100%;
+.online .products .box .image img{
     border-radius: 15px;
+    width: 100%;
     transition: 0.5s;
     margin-bottom: 25px;
     vertical-align: bottom;
+    overflow: hidden;
 }
-.online .all .products .box img:hover{
+.online .all .products .box .image:hover img{
     transform: scale(1.2);
     cursor: pointer;
 }
