@@ -45,7 +45,7 @@ header .main ul li i{
     font-size: 10px;
     color: #e2bb53;
 }
-header .main ul .underline::after{
+header .main ul li a::after{
     content: '';
     position: absolute;
     width: 0;
@@ -53,7 +53,6 @@ header .main ul .underline::after{
     background-color: #e2bb53;
     top: 18px;
     left: 0;
-    opacity:0;
     transition: 0.5s;
 }
 header .main ul a{
@@ -65,7 +64,6 @@ header .main ul a{
 header .main ul li:hover ::after{
     width: 70%;
     height: 2px;
-    opacity: 1;
 }
 header .main ul a:hover{
     color: #e2bb53 !important;
@@ -137,14 +135,10 @@ header .right a:hover i{
     border: 1px solid #e2bb53;
     transition: 0.5s;
 }
-.slide .left button::after{
-    content: '';
-    position: absolute;
-    height: 10%;
-    width: 20%;
+.slide .left button:hover{
     background-color: #fff;
-    bottom: 0px;
-    left: 0;
+    border: 1px solid #fff;
+    cursor: pointer;
 }
 .slide .left button span{
     font-size: 14px;
