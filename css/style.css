@@ -128,22 +128,38 @@ header .right a:hover i{
     color: #275c53;
     margin-right: 10px;
 }
-.slide .left button{
-    padding: 1rem 4rem;
-    border-radius: 40px;
+.slide .left .btn-hover{  
+    padding: 1.5rem 5rem;
     background: #e2bb53;
-    border: 1px solid #e2bb53;
-    transition: 0.5s;
+    border: none;
+    width: 50%;
+    border-radius: 40px;
+    text-align: center;
 }
-.slide .left button:hover{
+
+.slide .left .btn-hover{
+    position: relative;
+    overflow: hidden;
+}
+.slide .left .btn-hover ::before{
+    content: '';
     background-color: #fff;
-    border: 1px solid #fff;
-    cursor: pointer;
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    border-radius: 40px;
+    bottom: 0;
+    left: 0;
+    border: none;
+    transition:1s;
 }
-.slide .left button span{
-    font-size: 14px;
+.slide .left .btn-hover:hover ::before{
+    height: 100%;
+}
+.slide .left .btn-hover span{
+    font-size: 20px;
     letter-spacing: 1px;
-    color: #275c53;
+    color: #275c53 !important;
 }
 .slide .right{
     width: 50%;
